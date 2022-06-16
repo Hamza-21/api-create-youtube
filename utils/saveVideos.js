@@ -9,7 +9,7 @@ const Video = require("../models/Videos");
 const api_key = process.env.API_KEY;
 const publishedAfter = dayjs().subtract(1, "hour").toISOString();
 
-//Async Await go hand in hand because APIs can be slowwwww (remember to change the comment later pls)
+//Async Await go hand in hand because APIs can be slowwwww 
 
 async function saveVideos() {
   const collectVideos = await fetch(
@@ -29,6 +29,8 @@ async function saveVideos() {
     video.save();
   }
 }
+
+//cron job to schedule the function every 10s
 
 function scheduleJob() {
   cron.schedule("*/10 * * * * *", saveVideos);
