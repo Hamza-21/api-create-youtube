@@ -1,0 +1,30 @@
+version: "3.4"
+
+services:
+  restapi:
+    image: restapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+      API_KEY: ${API_KEY}
+      DB_CONNECTION: ${DB_CONNECTION}
+      QUERY: ${QUERY}
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo
