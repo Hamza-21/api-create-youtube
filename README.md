@@ -7,7 +7,7 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 <details>
   <summary> <h3> Basic Functionalities </h3> </summary>
 
-- Cron job that calls the YouTube API continuously in background (async) with a 30s interval for fetching the latest videos for a predefined search query and stores the data of videos in the mongoDB database with queried collections.
+- Cron job that calls the YouTube API continuously in background (async) with a 10s interval for fetching the latest videos for a predefined search query and stores the data of videos in the mongoDB database with queried collections.
 - A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime.
 - A basic search API to search the stored videos using their title and description.
 </details>
