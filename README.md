@@ -1,11 +1,7 @@
-## Backend Task | FamPay
-
-### Project Goal
-
-To make an API to fetch latest videos sorted in reverse chronological order of the publishing date-time from YouTube for a given search query in paginated response
+# Fetch YT API | Save to Database | Call the API using GET verb | Search 
 
 <details>
-  <summary> <h3> Basic Functionalities </h3> </summary>
+  <summary> <h2> Basic Functionalities </h2> </summary>
 
 - Cron job that calls the YouTube API continuously in background (async) with a 10s interval for fetching the latest videos for a predefined search query and stores the data of videos in the mongoDB database with queried collections.
 - A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime.
